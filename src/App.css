@@ -1,0 +1,19 @@
+.app_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  background-color: #242424;
+  overflow: hidden;
+
+}
+
+.app {
+  width: 50%;
+  height: 70vh;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
