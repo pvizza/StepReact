@@ -1,4 +1,6 @@
 import './App.css'
+import FormComponent from './components/formComponent/FormComponent'
+import SideComponent from './components/sideComponent/SideComponent'
 
 function App() {
 
@@ -6,7 +8,8 @@ function App() {
     <>
      <main className='app_container'>
       <div className='app'>
-        center main
+       <SideComponent/>
+       <FormComponent/>
       </div>
 
      </main>
