@@ -1,0 +1,36 @@
+.side-component {
+  flex-grow: 1;
+  background-image: url('../../../multi-step-form-main/assets/images/bg-sidebar-desktop.svg');
+  background-size: cover;
+  margin: 12px;
+  border-radius: 3%;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: auto;
+  grid-gap: 8px;
+  margin-top: 24px;
+}
+
+.grid-item {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  align-items: center;
+}
+
+.step-number {
+  align-self: center;
+  justify-self: center;
+  text-align: center;
+}
+
+.step-number-circle {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  box-sizing: border-box;
+  padding-top:1px;
+  border: solid 1px white;
+}
