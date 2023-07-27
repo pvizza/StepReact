@@ -1,24 +1,25 @@
 import NextStepComponent from "../NextStepComponent/NextStepComponent";
+import './formComponent.css'
 
 const FormComponent = () => {
   return (
-    <div style={{ flexGrow: '2' }}>
-      <h1>Personal info</h1>
-      <span>Please provide your name,email,address,and phone number.</span>
-      <div style={{display:'flex'}}>
-      <form style={{display: 'flex',flexDirection:'column'}}>
-        <label htmlFor="name">Name</label>
-        <input type="text" id="name" name="name" placeholder="Your name.." />
-        <label htmlFor="email">Email</label>
-        <input type="text" id="email" name="email" placeholder="Your email.." />
-        <label htmlFor="address">Address</label>
-        <input type="text" id="address" name="address" placeholder="Your address.." />
-        <label htmlFor="phone">Phone</label>
-        <input type="text" id="phone" name="phone" placeholder="Your phone number.." />
-        {/* <input type="submit" value="Submit" /> */}
-      </form>
+    <div className="form-container">
+      <h1 className="form-title">Personal info</h1>
+      <span className="form-description">Please provide your name, email, address, and phone number.</span>
+      <div className="form-wrapper">
+        <form className="form" style={{ width: '100%' }}>
+          <label htmlFor="name" className="form-label">Name</label>
+          <input type="text" id="name" name="name" placeholder="Your name.." className="form-input" />
+          <label htmlFor="email" className="form-label">Email</label>
+          <input type="text" id="email" name="email" placeholder="Your email.." className="form-input" />
+          <label htmlFor="address" className="form-label">Address</label>
+          <input type="text" id="address" name="address" placeholder="Your address.." className="form-input" />
+          <label htmlFor="phone" className="form-label">Phone</label>
+          <input type="text" id="phone" name="phone" placeholder="Your phone number.." className="form-input" />
+          {/* <input type="submit" value="Submit" /> */}
+        </form>
       </div>
-      <NextStepComponent/>
+      <NextStepComponent />
     </div>
   );
 }
