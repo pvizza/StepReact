@@ -1,7 +1,10 @@
+import { useState } from "react";
 import NextStepComponent from "../NextStepComponent/NextStepComponent";
 import './formComponent.css'
 
-const FormComponent = () => {
+const FormComponent = ({currentStep,setCurrentStep }) => {
+  console.log(currentStep)
+
   return (
     <div className="form-container">
       <h1 className="form-title">Personal info</h1>
@@ -19,7 +22,7 @@ const FormComponent = () => {
           {/* <input type="submit" value="Submit" /> */}
         </form>
       </div>
-      <NextStepComponent />
+      <NextStepComponent currentStep={currentStep} setCurrentStep={setCurrentStep}/>
     </div>
   );
 }
