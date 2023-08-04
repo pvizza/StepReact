@@ -10,8 +10,8 @@
 }
 
 .app {
-  width: 50%;
-  /* height: 70vh; */
+  width: 40%;
+  height: 55vh;
   background-color: white;
   display: flex;
 }

@@ -1,9 +1,8 @@
 const NextStepComponent = () => {
-  // const { nextStep } = useNextStepContext();
 
   return (
-    <div>
-      <button>Next Step</button>
+    <div style={{width:'80%',textAlign:'end'}}>
+      <button style={{backgroundColor:'#0f0fff',border:'none',padding:'5px',width:'88px'}}>Next Step</button>
     </div>
   );
 }

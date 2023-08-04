@@ -1,11 +1,14 @@
+import { useState } from 'react';
 import './SideComponent.css';
 
 const SideComponent = () => {
+  const [active,setActive] = useState(true);
+
   return (
     <section className="side-component">
       <div className="grid-container">
         <div className="grid-item">
-          <p className="step-number step-number-circle">1</p>
+          <p className={`${active ? 'step-number step-number-circle active' : 'step-number step-number-circle'}`}>1</p>
           <div>
             <span>step 1</span>
             <p>YOUR INFO</p>

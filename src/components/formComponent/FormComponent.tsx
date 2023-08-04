@@ -12,11 +12,8 @@ const FormComponent = () => {
           <input type="text" id="name" name="name" placeholder="Your name.." className="form-input" />
           <label htmlFor="email" className="form-label">Email</label>
           <input type="text" id="email" name="email" placeholder="Your email.." className="form-input" />
-          <label htmlFor="address" className="form-label">Address</label>
-          <input type="text" id="address" name="address" placeholder="Your address.." className="form-input" />
           <label htmlFor="phone" className="form-label">Phone</label>
           <input type="text" id="phone" name="phone" placeholder="Your phone number.." className="form-input" />
-          {/* <input type="submit" value="Submit" /> */}
         </form>
       </div>
       <NextStepComponent />
