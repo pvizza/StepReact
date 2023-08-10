@@ -1,9 +1,5 @@
-.form-container {
-  display: flex;
-  flex-direction: column;
-  padding: 30px;
-  margin:20px;
-}
+@import '../../App.css';
+
 
 .form-title {
   margin:0px;

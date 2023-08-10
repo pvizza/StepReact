@@ -26,7 +26,6 @@ const FormComponent = ({currentStep,setCurrentStep }:FormComponentProps) => {
   }
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    debugger
     e.preventDefault();
     if(formValues.name.length > 0 && formValues.email.length > 0 && formValues.phone.length > 0) { 
       localStorage.setItem('formValues', JSON.stringify(formValues))
