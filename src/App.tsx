@@ -18,7 +18,7 @@ const StepComponent = ({currentStep, setCurrentStep}) => {
 }
 
 function App() {
-  const [currentStep, setCurrentStep] = useState(1);
+  const [currentStep, setCurrentStep] = useState(2);
 
 
   return (

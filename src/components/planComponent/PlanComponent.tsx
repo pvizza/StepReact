@@ -1,3 +1,9 @@
+import './planComponent.css';
+import { ReactComponent as AdvancedLogo } from "../../assets/icon-advanced.svg";
+import { ReactComponent as ArcadeLogo} from "../../assets/icon-arcade.svg"
+import { ReactComponent as ProLogo} from "../../assets/icon-pro.svg"
+
+
 const PlanComponent = () => {
   return(
     <>
@@ -7,18 +13,22 @@ const PlanComponent = () => {
       <section className="plans-container">
         <div className="plan">
           <p>Arcade</p>
+          <ArcadeLogo/>
           </div>
         <div className="plan">
         <p>Advanced</p>
+        <AdvancedLogo/>
            </div>
         <div className="plan">  
         <p>Pro</p>
+        <ProLogo/>
          </div>
-        <div className="plan payment">
+       
+      </section>
+      <div className="plan payment">
           <span>Monthly</span>
           <span>Yearly</span>
         </div>
-      </section>
       </div>
     </>
   )

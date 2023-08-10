@@ -1,1 +1,18 @@
-@import '../../App.css'
+@import '../../App.css';
+
+.form-container {
+  width: 51%;
+}
+
+.plans-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 8px;
+
+  .plan {
+    border: solid 1px;
+    height: 9rem;
+    border-radius: 8px;
+  }
+}
+
