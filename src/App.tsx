@@ -11,7 +11,7 @@ const StepComponent = ({currentStep, setCurrentStep}) => {
     case 1:
       return <FormComponent currentStep={currentStep} setCurrentStep={setCurrentStep} />;
     case 2:
-      return <PlanComponent/>;
+      return <PlanComponent currentStep={currentStep} setCurrentStep={setCurrentStep}/>;
     default:
       return null;
   }

@@ -18,7 +18,7 @@ const NextStepComponent: React.FC<NextStepComponentProps> = ({ currentStep, setC
     }
   };
   return (
-    <div style={{width:'80%',textAlign:'end'}}>
+    <div style={{textAlign:'end'}}>
       <button style={{backgroundColor:'#0f0fff',border:'none',padding:'5px',width:'88px'}} onClick={handleNextStep}>Next Step</button>
     </div>
   );

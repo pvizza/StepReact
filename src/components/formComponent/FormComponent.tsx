@@ -53,7 +53,6 @@ const FormComponent = ({currentStep,setCurrentStep }:FormComponentProps) => {
           <label htmlFor="phone" className="form-label">Phone</label>
           <input onChange={handleChange} type="text" id="phone" name="phone"  value={formValues.phone} placeholder="Your phone number.." className="form-input" />
           <NextStepComponent currentStep={currentStep} setCurrentStep={setCurrentStep} handleSubmit={handleSubmit}/>
-
         </form>
 
 
