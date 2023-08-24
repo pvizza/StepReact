@@ -4,7 +4,7 @@ import React from 'react';
 interface NextStepComponentProps {
   currentStep: number;
   setCurrentStep: React.Dispatch<React.SetStateAction<number>>;
-  handleSubmit: any;
+  handleSubmit?: any;
 }
 
 const NextStepComponent: React.FC<NextStepComponentProps> = ({ currentStep, setCurrentStep, handleSubmit }) => {

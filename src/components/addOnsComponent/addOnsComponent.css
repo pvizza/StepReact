@@ -1,0 +1,47 @@
+@import '../../App.css';
+@import '../../index.css';
+
+.addons-subtitle {
+  color: var(--color-secondary);
+}
+
+.addons-container {
+  margin-top: 20px;
+  display: grid;
+  gap: 10px;
+
+  .addon {
+    border: var(--border-color);
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 6px;
+
+    .addon-title {
+      width: 60%;
+      line-height: normal;
+
+        .addon-description {
+          color: var(--color-primary);
+          font-weight: 700;
+        }
+        .addon-sub-description {
+          color: var(--color-secondary);
+        }
+    }
+    .addon-price {
+      width: 20%;
+      font-size: 15px;
+      text-align: center;
+      color: #4e4cdb;
+      font-weight: 500;
+    }
+    .addon-checkbox {
+      accent-color: #4e4cdb;
+    }
+    .addon-checkbox:checked::before {
+      accent-color: #ffffff;
+    }
+  }
+}

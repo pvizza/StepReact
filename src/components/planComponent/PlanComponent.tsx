@@ -5,10 +5,6 @@ import { ReactComponent as ProLogo} from "../../assets/icon-pro.svg"
 import NextStepComponent from '../NextStepComponent/NextStepComponent';
 import { useState } from 'react';
 
-interface PlanComponentProps {
-  currentStep: number;
-  setCurrentStep: React.Dispatch<React.SetStateAction<number>>;
-}
 
 type Plan = 'arcade' | 'advanced' | 'pro' | '';
 
