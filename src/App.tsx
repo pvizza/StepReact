@@ -4,6 +4,7 @@ import FormComponent from './components/formComponent/FormComponent'
 import SideComponent from './components/sideComponent/SideComponent'
 import PlanComponent from './components/planComponent/PlanComponent';
 import AddOnsComponent from './components/addOnsComponent/addOnsCOmponent';
+import SumarryComponent from './components/summaryComponent/SummaryComponent';
 
 const StepComponent = ({currentStep, setCurrentStep}:PlanComponentProps) => {
   debugger
@@ -15,13 +16,15 @@ const StepComponent = ({currentStep, setCurrentStep}:PlanComponentProps) => {
       return <PlanComponent currentStep={currentStep} setCurrentStep={setCurrentStep}/>;
     case 3: 
     return  <AddOnsComponent currentStep={currentStep} setCurrentStep={setCurrentStep}/>;  
+    case 4:
+    return <SumarryComponent currentStep={currentStep} setCurrentStep={setCurrentStep}/>;
     default:
       return null;
   }
 }
 
 function App() {
-  const [currentStep, setCurrentStep] = useState(3);
+  const [currentStep, setCurrentStep] = useState(4);
 
 
   return (
