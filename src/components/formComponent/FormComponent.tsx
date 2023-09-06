@@ -1,6 +1,7 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import NextStepComponent from "../NextStepComponent/NextStepComponent";
 import './formComponent.css'
+import validateForm from '../../utils/validateForm'
 
 interface FormComponentProps {
   currentStep: number;
@@ -19,15 +20,19 @@ const FormComponent = ({currentStep,setCurrentStep }:FormComponentProps) => {
     email: '',
     phone: ''
   })
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => { 
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const {name, value} = e.target;
     setFormValues({...formValues, [name]: value})
   }
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    let validate = validateForm(formValues)
     if(formValues.name.length > 0 && formValues.email.length > 0 && formValues.phone.length > 0) { 
+     const nameError = validate.name ? alert(validate.name) :  true;
+     const emailError = validate.email ? alert(validate.email) : true;
+     const phoneError = validate.phone ? alert(validate.phone) : true;
+      if(nameError && emailError && phoneError) {
       localStorage.setItem('formValues', JSON.stringify(formValues))
       setFormValues({
         name: '',
@@ -35,10 +40,13 @@ const FormComponent = ({currentStep,setCurrentStep }:FormComponentProps) => {
         phone: ''
       })
       setCurrentStep(currentStep + 1);
-    } 
+      }
+    } else {
+      alert('Please fill all fields')
+    }
    
   }
-  console.log(currentStep)
+
   return (
     <div className="form-container">
       <h1 className="form-title">Personal info</h1>
@@ -51,7 +59,7 @@ const FormComponent = ({currentStep,setCurrentStep }:FormComponentProps) => {
           <label htmlFor="email" className="form-label">Email</label>
           <input onChange={handleChange} type="text" id="email" name="email" value={formValues.email} placeholder="Your email.." className="form-input" />
           <label htmlFor="phone" className="form-label">Phone</label>
-          <input onChange={handleChange} type="text" id="phone" name="phone"  value={formValues.phone} placeholder="Your phone number.." className="form-input" />
+          <input onChange={handleChange} type="text" id="phone" name="phone" maxLength={8} value={formValues.phone} placeholder="Your phone number.." className="form-input" />
           <NextStepComponent currentStep={currentStep} setCurrentStep={setCurrentStep} handleSubmit={handleSubmit}/>
         </form>
 

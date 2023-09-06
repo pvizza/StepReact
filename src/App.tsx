@@ -7,7 +7,6 @@ import AddOnsComponent from './components/addOnsComponent/addOnsCOmponent';
 import SumarryComponent from './components/summaryComponent/SummaryComponent';
 
 const StepComponent = ({currentStep, setCurrentStep}:PlanComponentProps) => {
-  debugger
   console.log({currentStep})
   switch (currentStep) {
     case 1:
@@ -24,7 +23,7 @@ const StepComponent = ({currentStep, setCurrentStep}:PlanComponentProps) => {
 }
 
 function App() {
-  const [currentStep, setCurrentStep] = useState(4);
+  const [currentStep, setCurrentStep] = useState(1);
 
 
   return (
