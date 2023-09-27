@@ -1,4 +1,5 @@
 import React from 'react';
+import './NextStepComponent.css';
 
 
 interface NextStepComponentProps {
@@ -8,18 +9,29 @@ interface NextStepComponentProps {
 }
 
 const NextStepComponent: React.FC<NextStepComponentProps> = ({ currentStep, setCurrentStep, handleSubmit }) => {
-  
+  const buttonName = currentStep === 4 ? 'Confirm' : 'Next Step';
+  const buttonColor = currentStep === 4 ? '#6259ff' : '#02295a';
+  const buttonPosition = currentStep === 1 ? 'flex-end' : 'space-between';
+
   const handleNextStep = (e:any) => {
-    if(currentStep === 1) {
-      handleSubmit(e);
-    }
-    else if(currentStep < 4) {
+    handleSubmit && handleSubmit(e);
+    if(currentStep === 3) {
       setCurrentStep(currentStep + 1);
     }
   };
+  //TODO: IMPROVE THIS COMPONENT
   return (
-    <div style={{textAlign:'end'}}>
-      <button style={{backgroundColor:'#0f0fff',border:'none',padding:'5px',width:'88px'}} onClick={handleNextStep}>Next Step</button>
+    <div className='nextStep__container' style={{justifyContent:buttonPosition}}>
+      {
+        currentStep > 1 ? 
+          <button className='backStep-button' 
+          onClick={() => setCurrentStep(currentStep - 1)}> Go back
+          </button>
+          : null
+      }
+      <button  className='nextStep-button' style={{backgroundColor: buttonColor}} 
+      onClick={handleNextStep}>{buttonName}
+      </button>
     </div>
   );
 }

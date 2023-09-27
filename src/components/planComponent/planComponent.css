@@ -18,16 +18,23 @@
     height: 9rem;
     border-radius: 8px;
     cursor: pointer;
+    padding-bottom: 10px;
 
     &.selected,
     &:hover {
       background-color: #f5f4f4;
       border: solid 1px #4e4cdb;
     }
-
-
+    .plan-title {
+      font-weight: 600;
+    }
     .plan-subtitle {
-      margin-bottom: 10px;
+      font-size: 13px;
+      color: var(--color-secondary);
+      &.yearly {
+        color: var(--color-primary);
+        font-weight: 500;
+      }
     }
   }
 

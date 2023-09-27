@@ -1,3 +1,6 @@
+@import '../../App.css';
+@import '../../index.css';
+
 .side-component {
   background-image: url('../../assets/bg-sidebar-desktop.svg');
   background-size: cover;
@@ -23,6 +26,18 @@
   align-self: center;
   justify-self: center;
   text-align: center;
+  color: #ffffff;
+}
+
+.step-title {
+  color: #8b8b8b;
+  font-size: 12px;
+}
+
+.step-description {
+  color: #ffffff;
+  font-family: var(--font-tertiary);
+  font-size: 13px;
 }
 
 .step-number-circle {
@@ -32,10 +47,10 @@
   border-radius: 50%;
   box-sizing: border-box;
   padding-top:1px;
-  border: solid 1px white;
+  border: solid 1px #ffffff;
 }
 
 .active {
-  background-color: white;
+  background-color: #b2f5d3;
   color: #1d1e35;
 }

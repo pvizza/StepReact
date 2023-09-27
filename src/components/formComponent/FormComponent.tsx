@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useState } from "react";
 import NextStepComponent from "../NextStepComponent/NextStepComponent";
 import './formComponent.css'
 import validateForm from '../../utils/validateForm'
@@ -15,6 +15,7 @@ interface FormValues {
 }
 
 const FormComponent = ({currentStep,setCurrentStep }:FormComponentProps) => {
+  const [errors, setErrors] = useState<{ [key: string]: string }>({});
   const [formValues, setFormValues] = useState<FormValues>({
     name: '',
     email: '',
@@ -27,12 +28,16 @@ const FormComponent = ({currentStep,setCurrentStep }:FormComponentProps) => {
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    const newErrors : { [key: string]: string } = {};
+    
     let validate = validateForm(formValues)
+    if (validate.name) newErrors.name = validate.name
+    if (validate.email) newErrors.email = validate.email
+    if (validate.phone) newErrors.phone = validate.phone
+    setErrors(newErrors);
+    
     if(formValues.name.length > 0 && formValues.email.length > 0 && formValues.phone.length > 0) { 
-     const nameError = validate.name ? alert(validate.name) :  true;
-     const emailError = validate.email ? alert(validate.email) : true;
-     const phoneError = validate.phone ? alert(validate.phone) : true;
-      if(nameError && emailError && phoneError) {
+      if(Object.keys(newErrors).length === 0) {
       localStorage.setItem('formValues', JSON.stringify(formValues))
       setFormValues({
         name: '',
@@ -42,7 +47,7 @@ const FormComponent = ({currentStep,setCurrentStep }:FormComponentProps) => {
       setCurrentStep(currentStep + 1);
       }
     } else {
-      alert('Please fill all fields')
+      // alert('Please fill all fields')
     }
    
   }
@@ -54,18 +59,21 @@ const FormComponent = ({currentStep,setCurrentStep }:FormComponentProps) => {
       <div className="form-wrapper">
 
         <form className="form" style={{ width: '100%' }} >
-          <label htmlFor="name" className="form-label">Name</label>
-          <input onChange={handleChange} type="text" id="name" name="name" value={formValues.name} placeholder="Your name.." className="form-input" />
-          <label htmlFor="email" className="form-label">Email</label>
-          <input onChange={handleChange} type="text" id="email" name="email" value={formValues.email} placeholder="Your email.." className="form-input" />
-          <label htmlFor="phone" className="form-label">Phone</label>
-          <input onChange={handleChange} type="text" id="phone" name="phone" maxLength={8} value={formValues.phone} placeholder="Your phone number.." className="form-input" />
-          <NextStepComponent currentStep={currentStep} setCurrentStep={setCurrentStep} handleSubmit={handleSubmit}/>
+          <label htmlFor="name" className="form-label">Name
+            {errors.name && <span className="form-error">{errors.name}</span>}
+          </label>
+          <input onChange={handleChange} type="text" id="name" name="name" value={formValues.name} placeholder="Your name.." className={`form-input ${errors.name ? 'form-input-error' : ''}`} />
+          <label htmlFor="email" className="form-label">Email Address
+            {errors.email && <span className="form-error">{errors.email}</span>}
+          </label>
+          <input onChange={handleChange} type="text" id="email" name="email" value={formValues.email} placeholder="Your email.." className={`form-input ${errors.email ? 'form-input-error' : ''}`} />
+          <label htmlFor="phone" className="form-label">Phone Number
+            {errors.phone && <span className="form-error">{errors.phone}</span>}
+          </label>
+          <input onChange={handleChange} type="text" id="phone" name="phone" maxLength={8} value={formValues.phone} placeholder="Your phone number.." className={`form-input ${errors.phone ? 'form-input-error' : ''}`} />
         </form>
-
-
       </div>
-     
+        <NextStepComponent currentStep={currentStep} setCurrentStep={setCurrentStep} handleSubmit={handleSubmit}/>
     </div>
   );
 }

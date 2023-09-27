@@ -1,8 +1,32 @@
+@font-face {
+  font-family: 'Ubuntu Medium';
+  src: url('./assets/Ubuntu-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Ubuntu Regular';
+  src: url('./assets/Ubuntu-Regular.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Ubuntu Bold';
+  src: url('./assets/Ubuntu-Bold.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+
 :root {
   --color-primary: #0058c7;
   --color-secondary: #6c757d;
   --border-color: solid 1px #4e4cdb;
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  --font-primary: 'Ubuntu Bold', sans-serif;
+  --font-secondary: 'Ubuntu Regular', sans-serif;
+  --font-tertiary: 'Ubuntu Medium', sans-serif;
   line-height: 1.5;
   font-weight: 400;
   color-scheme: light dark;
@@ -16,6 +40,7 @@
 }
 
 body {
+  font-family: var(--font-primary);
   margin: 0;
   min-width: 320px;
   min-height: 100vh;
@@ -25,5 +50,10 @@ body {
 
 p {
   margin:0px;
+  font-family: var(--font-secondary);
+}
+
+span {
+  font-family: var(--font-tertiary);
 }
 

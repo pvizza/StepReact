@@ -5,6 +5,8 @@ import SideComponent from './components/sideComponent/SideComponent'
 import PlanComponent from './components/planComponent/PlanComponent';
 import AddOnsComponent from './components/addOnsComponent/addOnsCOmponent';
 import SumarryComponent from './components/summaryComponent/SummaryComponent';
+import { PaymentProvider } from '../context/paymetsContext';
+import ConfirmingComponent from './components/confirmingComponent/ConfirmingComponent';
 
 const StepComponent = ({currentStep, setCurrentStep}:PlanComponentProps) => {
   console.log({currentStep})
@@ -14,11 +16,13 @@ const StepComponent = ({currentStep, setCurrentStep}:PlanComponentProps) => {
     case 2:
       return <PlanComponent currentStep={currentStep} setCurrentStep={setCurrentStep}/>;
     case 3: 
-    return  <AddOnsComponent currentStep={currentStep} setCurrentStep={setCurrentStep}/>;  
+      return  <AddOnsComponent currentStep={currentStep} setCurrentStep={setCurrentStep}/>;  
     case 4:
-    return <SumarryComponent currentStep={currentStep} setCurrentStep={setCurrentStep}/>;
+      return <SumarryComponent currentStep={currentStep} setCurrentStep={setCurrentStep}/>;
+    case 5:
+      return <ConfirmingComponent/>;
     default:
-      return null;
+      return null; //error page
   }
 }
 
@@ -30,8 +34,10 @@ function App() {
     <>
      <main className='app_container'>
       <div className='app'>
-      <SideComponent currentStep={currentStep} />
-      <StepComponent currentStep={currentStep} setCurrentStep={setCurrentStep}/>
+      <PaymentProvider>
+        <SideComponent currentStep={currentStep} />
+        <StepComponent currentStep={currentStep} setCurrentStep={setCurrentStep}/>
+      </PaymentProvider>
       </div>
      </main>
     </>

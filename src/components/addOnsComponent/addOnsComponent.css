@@ -3,6 +3,7 @@
 
 .addons-subtitle {
   color: var(--color-secondary);
+  font-size: 14px;
 }
 
 .addons-container {
@@ -16,18 +17,27 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
-    padding: 6px;
+    padding: 14px;
 
+    &:hover {
+      background-color: aliceblue;
+    }
+    &.selected {
+      background-color: aliceblue;
+    }
     .addon-title {
       width: 60%;
       line-height: normal;
 
         .addon-description {
           color: var(--color-primary);
+          font-family: var(--font-primary);
           font-weight: 700;
         }
         .addon-sub-description {
           color: var(--color-secondary);
+          font-family: var(--font-secondary);
+          font-size: 13px;
         }
     }
     .addon-price {

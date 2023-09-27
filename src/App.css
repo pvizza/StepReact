@@ -22,3 +22,10 @@
   padding: 30px;
   margin:20px;
 }
+
+.form-description {
+  font-weight: 500;
+  font-size: 14px;
+  color: var(--color-secondary);
+  font-family: var(--font-secondary);
+}

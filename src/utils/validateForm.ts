@@ -1,3 +1,5 @@
+import { INVALID_EMAIL_ERROR, INVALID_NAME_ERROR, INVALID_PHONE_ERROR, REQUIRED_FIELD_ERROR } from "../messagesStrings";
+
 interface FormValues {
   name: string;
   email: string;
@@ -18,15 +20,15 @@ const validateForm = (formValues: FormValues) => {
   const { name, email, phone } = formValues;
 
   if (!name || !nameRegex.test(name)) {
-    errors.name = "Please enter a valid name";
+    errors.name = name ? INVALID_NAME_ERROR : REQUIRED_FIELD_ERROR;
   }
 
   if (!email || !emailRegex.test(email)) {
-    errors.email = "Please enter a valid email address";
+    errors.email = email ? INVALID_EMAIL_ERROR : REQUIRED_FIELD_ERROR;
   }
 
   if (!phone || !phoneRegex.test(phone)) {
-    errors.phone = "Please enter a valid phone number";
+    errors.phone = phone ? INVALID_PHONE_ERROR : REQUIRED_FIELD_ERROR;
   }
 
   return errors;
