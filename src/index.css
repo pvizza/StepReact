@@ -27,6 +27,10 @@
   --font-primary: 'Ubuntu Bold', sans-serif;
   --font-secondary: 'Ubuntu Regular', sans-serif;
   --font-tertiary: 'Ubuntu Medium', sans-serif;
+  --smallMobile: 320px;
+  --mobile: 480px;
+  --tablet: 768px;
+  --desktop: 1024px;
   line-height: 1.5;
   font-weight: 400;
   color-scheme: light dark;
@@ -56,4 +60,5 @@ p {
 span {
   font-family: var(--font-tertiary);
 }
+
 

@@ -54,3 +54,29 @@
   background-color: #b2f5d3;
   color: #1d1e35;
 }
+
+@media (max-width: 768px) {
+  .side-component {
+    width: 100%;
+    height: auto;
+    margin:0px;
+    border-radius: 0px;
+    background-image: url('../../assets/bg-sidebar-mobile.svg');
+      .grid-container{
+        display: flex;
+        justify-content: center;
+        gap: 16px;
+        height: 20vh;
+        padding-top: 25px;
+        box-sizing: border-box;
+      .grid-item {
+        display: block;
+      }
+      .step-container {
+          display:none;
+        }
+      }
+    
+  }
+  
+}
