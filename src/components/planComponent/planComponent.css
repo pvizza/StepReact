@@ -36,6 +36,10 @@
         font-weight: 500;
       }
     }
+    .plan-logo {
+      margin-bottom: 25px;
+      flex-grow: 1;
+    }
   }
 
 }
@@ -95,4 +99,39 @@
 .toogle-check:checked+label:after {
   left: calc(100% - 5px);
   transform: translateX(-100%);
+}
+
+@media (max-width: 768px) {
+  .plans-container {
+    grid-template-columns: 1fr;
+
+    .plan {
+      padding-bottom: 0;
+      height: auto;
+      flex-direction: initial;
+      justify-content: initial;
+      padding:15px;
+
+      .plan-titles-mobile {
+        order:2;
+        display: flex;
+        flex-direction: column-reverse;
+      }
+      .plan-logo {
+        order:1;
+        margin-bottom: 0;
+        flex-grow: initial;
+        margin-right: 15px;
+      }
+    }
+  }
+}
+
+@media (max-height: 768px) {
+  .plans-container {
+    .plan {
+      padding:10px;
+    }
+  }
+  
 }

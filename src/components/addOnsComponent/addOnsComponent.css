@@ -55,3 +55,22 @@
     }
   }
 }
+
+@media (max-width: 768px) {
+  .addon {
+    height: 40px;
+  }
+}
+
+@media (max-width: 480px) {
+  .addon {
+    height: 55px;
+  }
+}
+
+@media (max-width: 320px) {
+  .addon {
+    height: 60px;
+    padding: 22px;
+  }
+}

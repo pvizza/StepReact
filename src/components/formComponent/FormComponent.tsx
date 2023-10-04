@@ -2,6 +2,7 @@ import { useState } from "react";
 import NextStepComponent from "../NextStepComponent/NextStepComponent";
 import './formComponent.css'
 import validateForm from '../../utils/validateForm'
+import { isMobile } from "../../utils/userAgent";
 
 interface FormComponentProps {
   currentStep: number;
@@ -46,10 +47,7 @@ const FormComponent = ({currentStep,setCurrentStep }:FormComponentProps) => {
       })
       setCurrentStep(currentStep + 1);
       }
-    } else {
-      // alert('Please fill all fields')
-    }
-   
+    } 
   }
 
   return (

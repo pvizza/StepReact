@@ -10,6 +10,7 @@
     background-color: transparent;
     margin-bottom: 3px;
     cursor: pointer;
+    margin-left: 22px;
   }
 
   .nextStep-button {
@@ -24,6 +25,24 @@
     &:hover {
       background-color: #102ed8 !important;
       color: #fff;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .nextStep__container {
+    background-color: #ffffff;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    display: block;
+    text-align: end;
+    width: 100%;
+    padding: 14px;
+    display: flex;
+
+    .backStep-button {
+      margin-bottom: 6px;
     }
   }
 }
